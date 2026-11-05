@@ -1,0 +1,16 @@
+build/
+*/build/
+
+*.iml
+.gradle
+/local.properties
+local.properties
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+
+.idea/
+!.idea/codeStyles/
+!.idea/copyright/
+!.idea/misc.xml
