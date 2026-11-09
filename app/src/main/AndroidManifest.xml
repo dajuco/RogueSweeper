@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Roguesweeper">
+
+        <!-- Pantalla Principal / Menú i Selecció de Ranura -->
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.screens.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -21,6 +23,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Pantalla de Joc (GameScreen) -->
+        <activity
+            android:name=".presentation.screens.GameActivity"
+            android:exported="false"
+            android:parentActivityName=".presentation.screens.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pantalla de Botiga de Millores (ShopScreen) -->
+        <activity
+            android:name=".presentation.screens.ShopActivity"
+            android:exported="false"
+            android:parentActivityName=".presentation.screens.MainActivity"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

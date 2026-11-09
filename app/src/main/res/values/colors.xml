@@ -2,4 +2,47 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme Colors RogueSweeper -->
+    <color name="bg_dark">#0B0F19</color>
+    <color name="bg_card">#151D2D</color>
+    <color name="bg_card_elevated">#1E293B</color>
+    <color name="card_stroke">#2C3B53</color>
+    <color name="card_stroke_subtle">#1F2B3E</color>
+
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_tertiary">#64748B</color>
+
+    <!-- Accent & Gameplay Colors -->
+    <color name="primary_accent">#3B82F6</color>
+    <color name="primary_accent_dark">#1D4ED8</color>
+    <color name="accent_gold">#F59E0B</color>
+    <color name="gold_bg">#2C2106</color>
+    <color name="gold_border">#B45309</color>
+    <color name="shield_cyan">#06B6D4</color>
+    <color name="shield_bg">#082F3B</color>
+    <color name="shield_border">#0891B2</color>
+    <color name="success_emerald">#10B981</color>
+    <color name="success_bg">#063625</color>
+    <color name="danger_rose">#F43F5E</color>
+    <color name="danger_bg">#3D0B14</color>
+
+    <!-- Board & Cells -->
+    <color name="cell_covered_bg">#233044</color>
+    <color name="cell_covered_stroke">#374B69</color>
+    <color name="cell_revealed_bg">#111827</color>
+    <color name="cell_revealed_stroke">#1F2937</color>
+    <color name="cell_mine_bg">#881337</color>
+    <color name="cell_shield_bg">#0E3A4B</color>
+
+    <!-- Classic Minesweeper Number Colors (Polished Neon / Dark) -->
+    <color name="num_1">#38BDF8</color>
+    <color name="num_2">#4ADE80</color>
+    <color name="num_3">#F87171</color>
+    <color name="num_4">#818CF8</color>
+    <color name="num_5">#FB7185</color>
+    <color name="num_6">#2DD4BF</color>
+    <color name="num_7">#C084FC</color>
+    <color name="num_8">#CBD5E1</color>
 </resources>

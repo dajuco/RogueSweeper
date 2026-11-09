@@ -1,3 +1,50 @@
 <resources>
-    <string name="app_name">Roguesweeper</string>
+    <string name="app_name">RogueSweeper</string>
+    <string name="tagline">Buscamines roguelite tàctil</string>
+    
+    <!-- Slots -->
+    <string name="slot_1">Ranura 1</string>
+    <string name="slot_2">Ranura 2</string>
+    <string name="current_profile">Estat del Perfil</string>
+    <string name="points_label">🪙 Saldo Permanent:</string>
+    <string name="shields_label">🛡️ Escuts Inicials:</string>
+    <string name="upgrades_active_label">⚡ Millores Adquirides:</string>
+    
+    <!-- Main Menu Buttons -->
+    <string name="btn_play">🎮 JUGAR PARTIDA</string>
+    <string name="btn_shop">🛒 BOTIGA DE MILLORES</string>
+    <string name="btn_reset_slot">🔄 Reiniciar Ranura</string>
+    <string name="slot_prompt">Tria la teva partida guardada:</string>
+    
+    <!-- Shop Screen -->
+    <string name="shop_title">🛒 Botiga de Millores</string>
+    <string name="shop_subtitle">Inverteix els punts obtinguts en millores permanents</string>
+    <string name="btn_back">← Tornar</string>
+    <string name="btn_upgrade">Millorar</string>
+    <string name="max_level_reached">Nivell Màxim</string>
+    <string name="insufficient_points">Punts insuficients per a aquesta millora!</string>
+    <string name="upgrade_success">Millora adquirida amb èxit!</string>
+    
+    <!-- Game Screen (HUD & Actions) -->
+    <string name="game_title">RogueSweeper</string>
+    <string name="mode_reveal">⛏️ Descobrir</string>
+    <string name="mode_flag">🚩 Bandera</string>
+    <string name="hud_mines">Mines</string>
+    <string name="hud_shields">Escuts</string>
+    <string name="hud_points">Punts</string>
+    <string name="btn_surrender">Sortir</string>
+    <string name="surrender_confirm_title">Abandonar partida?</string>
+    <string name="surrender_confirm_msg">Es conservaran tots els punts obtinguts fins ara.</string>
+    <string name="shield_saved_toast">🛡️ Un escut ha absorbit la mina! Partida salvada!</string>
+
+    <!-- Dialogs and End of Game -->
+    <string name="victory_title">🏆 VICTÒRIA!</string>
+    <string name="victory_message">Has netejat totes les mines del tauler!</string>
+    <string name="defeat_title">💥 DETONACIÓ!</string>
+    <string name="defeat_message">Has trepitjat una mina sense escuts disponibles.</string>
+    <string name="claim_and_exit">Cobrar i Sortir al Menú</string>
+    <string name="reset_confirm_title">Reiniciar progrés?</string>
+    <string name="reset_confirm_message">Estàs segur que vols reiniciar les dades d\'aquesta ranura? Es perdran els punts i les millores.</string>
+    <string name="confirm">Confirmar</string>
+    <string name="cancel">Cancel·lar</string>
 </resources>
