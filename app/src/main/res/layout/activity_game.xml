@@ -5,22 +5,25 @@
     android:id="@+id/gameRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark"
+    android:background="@drawable/bg_screen"
     android:paddingHorizontal="16dp"
-    android:paddingTop="12dp"
+    android:paddingTop="14dp"
     android:paddingBottom="16dp">
 
-    <!-- Top Action Bar -->
+    <!-- Top Navigation / Action Bar -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSurrender"
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:letterSpacing="0.03"
         android:text="@string/btn_surrender"
-        android:textColor="@color/danger_rose"
-        android:textSize="14sp"
-        app:icon="@android:drawable/ic_menu_revert"
-        app:iconTint="@color/danger_rose"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        app:icon="@drawable/ic_chevron_left"
+        app:iconPadding="4dp"
+        app:iconSize="20dp"
+        app:iconTint="@color/text_secondary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,28 +31,32 @@
         android:id="@+id/tvGameSlotLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_secondary"
-        android:textSize="13sp"
+        android:background="@drawable/bg_pill_accent"
+        android:letterSpacing="0.05"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="4dp"
+        android:textColor="@color/primary_accent"
+        android:textSize="11sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/btnSurrender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnSurrender"
         tools:text="Ranura 1" />
 
-    <!-- Top Information Panel (HUD) -->
+    <!-- Top Tactical HUD Panel -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardHud"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:cardBackgroundColor="@color/bg_card"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="3dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSurrender"
         app:strokeColor="@color/card_stroke"
-        app:strokeWidth="1dp">
+        app:strokeWidth="1.2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,8 +64,8 @@
             android:baselineAligned="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="6dp">
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp">
 
             <!-- Mines Remaining -->
             <LinearLayout
@@ -68,28 +75,44 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="💣 Mines"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:contentDescription="@string/hud_mines"
+                        android:src="@drawable/ic_mine" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:letterSpacing="0.06"
+                        android:text="@string/hud_mines"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvHudMines"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="3dp"
                     android:textColor="@color/danger_rose"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     tools:text="10" />
             </LinearLayout>
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="32dp"
-                android:background="@color/card_stroke" />
+                android:layout_height="36dp"
+                android:background="@color/card_stroke_subtle" />
 
             <!-- Shields Available -->
             <LinearLayout
@@ -99,30 +122,46 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🛡️ Escuts"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:contentDescription="@string/hud_shields"
+                        android:src="@drawable/ic_shield" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:letterSpacing="0.06"
+                        android:text="@string/hud_shields"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvHudShields"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="3dp"
                     android:textColor="@color/shield_cyan"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     tools:text="1" />
             </LinearLayout>
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="32dp"
-                android:background="@color/card_stroke" />
+                android:layout_height="36dp"
+                android:background="@color/card_stroke_subtle" />
 
-            <!-- Session Points -->
+            <!-- Session Bounty Points -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -130,20 +169,36 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🪙 Punts"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:contentDescription="@string/hud_points"
+                        android:src="@drawable/ic_coin" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:letterSpacing="0.06"
+                        android:text="@string/hud_points"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvHudPoints"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="3dp"
                     android:textColor="@color/accent_gold"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     tools:text="0" />
             </LinearLayout>
@@ -168,21 +223,39 @@
             android:id="@+id/btnModeReveal"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="46dp"
             android:layout_weight="1"
+            android:letterSpacing="0.03"
             android:text="@string/mode_reveal"
             android:textColor="@color/text_primary"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_radar"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconSize="18dp"
+            app:iconTint="@color/primary_accent"
+            app:strokeColor="@color/card_stroke" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnModeFlag"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="46dp"
             android:layout_weight="1"
+            android:letterSpacing="0.03"
             android:text="@string/mode_flag"
             android:textColor="@color/text_primary"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_flag"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconSize="18dp"
+            app:iconTint="@color/accent_gold"
+            app:strokeColor="@color/card_stroke" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <!-- Board Grid Container Card -->
@@ -192,9 +265,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="12dp"
-        app:cardBackgroundColor="@color/bg_card"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/bg_card_secondary"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toTopOf="@id/tvInstruction"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -208,18 +281,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:padding="6dp" />
+            android:padding="8dp" />
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Hint text -->
+    <!-- Hint Instruction -->
     <TextView
         android:id="@+id/tvInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Toc: acció activa | Toc mantingut: alternar bandera 🚩"
+        android:text="@string/game_instruction"
         android:textColor="@color/text_tertiary"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

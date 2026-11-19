@@ -1,6 +1,7 @@
 package com.example.roguesweeper.presentation.components
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -45,19 +46,23 @@ class BoardGridAdapter(
 
         fun bind(cell: Cell) {
             val context = binding.root.context
+            val container = binding.cellContainer
             val tv = binding.tvCell
+            val iv = binding.ivCellIcon
 
-            // Input handling using InputController
-            inputController.attachTo(tv, cell.row, cell.col)
+            inputController.attachTo(container, cell.row, cell.col)
 
             if (cell.isRevealed) {
                 if (cell.hasMine) {
-                    tv.setBackgroundResource(R.drawable.bg_cell_mine)
-                    tv.text = "💣"
-                    tv.setTextColor(ContextCompat.getColor(context, R.color.white))
+                    container.setBackgroundResource(R.drawable.bg_cell_mine)
+                    tv.visibility = View.GONE
+                    iv.visibility = View.VISIBLE
+                    iv.setImageResource(R.drawable.ic_mine)
                 } else {
-                    tv.setBackgroundResource(R.drawable.bg_cell_revealed)
+                    container.setBackgroundResource(R.drawable.bg_cell_revealed)
+                    iv.visibility = View.GONE
                     if (cell.adjacentMines > 0) {
+                        tv.visibility = View.VISIBLE
                         tv.text = cell.adjacentMines.toString()
                         val colorRes = when (cell.adjacentMines) {
                             1 -> R.color.num_1
@@ -71,15 +76,20 @@ class BoardGridAdapter(
                         }
                         tv.setTextColor(ContextCompat.getColor(context, colorRes))
                     } else {
+                        tv.visibility = View.GONE
                         tv.text = ""
                     }
                 }
             } else {
-                tv.setBackgroundResource(R.drawable.bg_cell_covered)
                 if (cell.isFlagged) {
-                    tv.text = "🚩"
-                    tv.setTextColor(ContextCompat.getColor(context, R.color.accent_gold))
+                    container.setBackgroundResource(R.drawable.bg_cell_flagged)
+                    tv.visibility = View.GONE
+                    iv.visibility = View.VISIBLE
+                    iv.setImageResource(R.drawable.ic_flag)
                 } else {
+                    container.setBackgroundResource(R.drawable.bg_cell_covered)
+                    tv.visibility = View.GONE
+                    iv.visibility = View.GONE
                     tv.text = ""
                 }
             }

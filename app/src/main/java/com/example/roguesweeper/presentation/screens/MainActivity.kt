@@ -79,9 +79,9 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.slot_2)
         }
 
-        binding.tvProfileTitle.text = "Estat del Perfil ($slotDisplayName)"
-        binding.tvProfilePoints.text = "${profile.points} pts"
-        binding.tvProfileShields.text = "${profile.shields} escut(s)"
+        binding.tvProfileTitle.text = "Perfil: $slotDisplayName"
+        binding.tvProfilePoints.text = profile.points.toString()
+        binding.tvProfileShields.text = profile.shields.toString()
 
         val activeUpgradesCount = profile.upgrades.count { it.level > 0 }
         binding.tvProfileUpgrades.text = "$activeUpgradesCount / ${profile.upgrades.size}"

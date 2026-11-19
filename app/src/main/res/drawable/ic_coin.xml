@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Outer gold ring -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M12,2 A10,10 0 1,0 12,22 A10,10 0 1,0 12,2 Z" />
+    <!-- Inner gold face -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M12,4.5 A7.5,7.5 0 1,0 12,19.5 A7.5,7.5 0 1,0 12,4.5 Z" />
+    <!-- Center star emblem -->
+    <path
+        android:fillColor="#FF8F00"
+        android:pathData="M12,7 L13.5,10.5 L17,11 L14.5,13.5 L15.5,17 L12,15 L8.5,17 L9.5,13.5 L7,11 L10.5,10.5 Z" />
+</vector>

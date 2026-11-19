@@ -63,7 +63,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun setupViews() {
         val slotLabel = if (slotId == "slot_1") getString(R.string.slot_1) else getString(R.string.slot_2)
-        binding.tvGameSlotLabel.text = "Partida: $slotLabel"
+        binding.tvGameSlotLabel.text = slotLabel
 
         binding.btnSurrender.setOnClickListener {
             showSurrenderDialog()
@@ -245,9 +245,9 @@ class GameActivity : AppCompatActivity() {
 
         val title = if (won) getString(R.string.victory_title) else getString(R.string.defeat_title)
         val msg = if (won) {
-            "${getString(R.string.victory_message)}\n\n🪙 Punts obtinguts: $sessionPoints\n⭐ Bonus victòria: +$victoryBonus\n💰 Punts totals guanyats: $totalEarned"
+            "${getString(R.string.victory_message)}\n\n• Punts de ronda: $sessionPoints\n• Bonus de victòria: +$victoryBonus\n• Total guanyat: $totalEarned pts"
         } else {
-            "${getString(R.string.defeat_message)}\n\n🪙 Punts conservats: $sessionPoints\nS'han transferit al teu saldo permanent!"
+            "${getString(R.string.defeat_message)}\n\n• Punts assegurats: $sessionPoints pts\nTransferits al teu saldo permanent."
         }
 
         AlertDialog.Builder(this)
@@ -263,7 +263,7 @@ class GameActivity : AppCompatActivity() {
     private fun showSurrenderDialog() {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.surrender_confirm_title))
-            .setMessage("${getString(R.string.surrender_confirm_msg)}\n\n🪙 Punts acumulats ara mateix: $sessionPoints")
+            .setMessage("${getString(R.string.surrender_confirm_msg)}\n\nPunts assegurats fins ara: $sessionPoints pts")
             .setPositiveButton(getString(R.string.btn_surrender)) { _, _ ->
                 if (sessionPoints > 0) {
                     val updatedProfile = profile.copy(points = profile.points + sessionPoints)

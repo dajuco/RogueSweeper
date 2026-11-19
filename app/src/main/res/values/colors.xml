@@ -2,47 +2,87 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
 
-    <!-- Theme Colors RogueSweeper -->
-    <color name="bg_dark">#0B0F19</color>
-    <color name="bg_card">#151D2D</color>
-    <color name="bg_card_elevated">#1E293B</color>
-    <color name="card_stroke">#2C3B53</color>
-    <color name="card_stroke_subtle">#1F2B3E</color>
+    <!-- Deep Atmospheric Theme Backgrounds -->
+    <color name="bg_dark">#0B0F17</color>
+    <color name="bg_dark_gradient_top">#131B2A</color>
+    <color name="bg_dark_gradient_bottom">#090D14</color>
+    
+    <!-- Surface & Card Layers -->
+    <color name="bg_card">#131C2A</color>
+    <color name="bg_card_elevated">#1A2538</color>
+    <color name="bg_card_secondary">#101723</color>
+    <color name="card_stroke">#24334B</color>
+    <color name="card_stroke_subtle">#1A2638</color>
+    <color name="card_stroke_highlight">#3B82F6</color>
 
+    <!-- Typography -->
     <color name="text_primary">#F8FAFC</color>
     <color name="text_secondary">#94A3B8</color>
     <color name="text_tertiary">#64748B</color>
+    <color name="text_muted">#475569</color>
 
-    <!-- Accent & Gameplay Colors -->
-    <color name="primary_accent">#3B82F6</color>
-    <color name="primary_accent_dark">#1D4ED8</color>
+    <!-- Game Identity Colors: Tactical Blue / Electric Neon -->
+    <color name="primary_accent">#38BDF8</color>
+    <color name="primary_accent_dark">#0284C7</color>
+    <color name="primary_accent_glow">#2038BDF8</color>
+    <color name="primary_btn_start">#0284C7</color>
+    <color name="primary_btn_end">#0EA5E9</color>
+
+    <!-- Bounty / Gold / Shop -->
     <color name="accent_gold">#F59E0B</color>
-    <color name="gold_bg">#2C2106</color>
+    <color name="accent_gold_bright">#FCD34D</color>
+    <color name="gold_bg">#231B09</color>
+    <color name="gold_card_elevated">#2D230D</color>
     <color name="gold_border">#B45309</color>
+    <color name="gold_glow">#25F59E0B</color>
+
+    <!-- Energy Shields (Cyan) -->
     <color name="shield_cyan">#06B6D4</color>
-    <color name="shield_bg">#082F3B</color>
+    <color name="shield_bright">#22D3EE</color>
+    <color name="shield_bg">#092631</color>
     <color name="shield_border">#0891B2</color>
-    <color name="success_emerald">#10B981</color>
-    <color name="success_bg">#063625</color>
+    <color name="shield_glow">#2006B6D4</color>
+
+    <!-- Danger & Mines (Rose / Crimson) -->
     <color name="danger_rose">#F43F5E</color>
-    <color name="danger_bg">#3D0B14</color>
+    <color name="danger_rose_bright">#FB7185</color>
+    <color name="danger_bg">#2F0A12</color>
+    <color name="danger_border">#9F1239</color>
 
-    <!-- Board & Cells -->
-    <color name="cell_covered_bg">#233044</color>
-    <color name="cell_covered_stroke">#374B69</color>
-    <color name="cell_revealed_bg">#111827</color>
-    <color name="cell_revealed_stroke">#1F2937</color>
-    <color name="cell_mine_bg">#881337</color>
+    <!-- Success & Victory (Emerald) -->
+    <color name="success_emerald">#10B981</color>
+    <color name="success_bright">#34D399</color>
+    <color name="success_bg">#072A1E</color>
+    <color name="success_border">#047857</color>
+
+    <!-- Tactile Cells (Beveled 3D Physical Game Tiles) -->
+    <color name="cell_covered_bg_top">#2E3D55</color>
+    <color name="cell_covered_bg_bottom">#212D40</color>
+    <color name="cell_covered_stroke">#3D506E</color>
+    <color name="cell_covered_bevel_light">#4E6488</color>
+    <color name="cell_covered_bevel_dark">#151E2B</color>
+
+    <color name="cell_revealed_bg">#0F1622</color>
+    <color name="cell_revealed_stroke">#1E2A3C</color>
+    <color name="cell_revealed_inner">#0B1019</color>
+
+    <color name="cell_mine_bg">#4C0519</color>
+    <color name="cell_mine_stroke">#E11D48</color>
     <color name="cell_shield_bg">#0E3A4B</color>
+    <color name="cell_shield_stroke">#06B6D4</color>
+    
+    <color name="cell_flag_bg">#2A1D07</color>
+    <color name="cell_flag_stroke">#F59E0B</color>
 
-    <!-- Classic Minesweeper Number Colors (Polished Neon / Dark) -->
+    <!-- Numbers (High-contrast, saturated neon numbers) -->
     <color name="num_1">#38BDF8</color>
-    <color name="num_2">#4ADE80</color>
+    <color name="num_2">#34D399</color>
     <color name="num_3">#F87171</color>
-    <color name="num_4">#818CF8</color>
-    <color name="num_5">#FB7185</color>
+    <color name="num_4">#A78BFA</color>
+    <color name="num_5">#FBBF24</color>
     <color name="num_6">#2DD4BF</color>
-    <color name="num_7">#C084FC</color>
-    <color name="num_8">#CBD5E1</color>
+    <color name="num_7">#F472B6</color>
+    <color name="num_8">#E2E8F0</color>
 </resources>

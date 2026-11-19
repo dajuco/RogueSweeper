@@ -1,6 +1,7 @@
 package com.example.roguesweeper.presentation.components
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -39,23 +40,25 @@ class UpgradeAdapter(
         fun bind(upgrade: Upgrade) {
             val context = binding.root.context
 
-            // Icon mapping
-            binding.tvUpgradeIcon.text = when (upgrade.id) {
-                "shield_capacity" -> "🛡️"
-                "initial_reveal" -> "🔍"
-                "mine_value" -> "⭐"
-                "board_size" -> "🗺️"
-                else -> "⚡"
+            // Icon mapping using high-quality vector drawables
+            val iconRes = when (upgrade.id) {
+                "shield_capacity" -> R.drawable.ic_shield
+                "initial_reveal" -> R.drawable.ic_radar
+                "mine_value" -> R.drawable.ic_coin
+                "board_size" -> R.drawable.ic_grid
+                else -> R.drawable.ic_star
             }
+            binding.ivUpgradeIcon.setImageResource(iconRes)
 
             binding.tvUpgradeName.text = upgrade.name
             binding.tvUpgradeDesc.text = upgrade.description
             binding.tvUpgradeLevel.text = "Nivell ${upgrade.level} / ${upgrade.maxLevel}"
 
             if (upgrade.isMaxLevel) {
+                binding.ivCostCoin.visibility = View.GONE
                 binding.tvUpgradeCost.text = "Completat"
                 binding.tvUpgradeCost.setTextColor(
-                    ContextCompat.getColor(context, R.color.text_secondary)
+                    ContextCompat.getColor(context, R.color.text_tertiary)
                 )
                 binding.btnBuyUpgrade.isEnabled = false
                 binding.btnBuyUpgrade.text = context.getString(R.string.max_level_reached)
@@ -64,7 +67,8 @@ class UpgradeAdapter(
                     ContextCompat.getColor(context, R.color.success_emerald)
                 )
             } else {
-                binding.tvUpgradeCost.text = "🪙 ${upgrade.currentCost} punts"
+                binding.ivCostCoin.visibility = View.VISIBLE
+                binding.tvUpgradeCost.text = "${upgrade.currentCost} punts"
                 binding.tvUpgradeCost.setTextColor(
                     ContextCompat.getColor(context, R.color.accent_gold)
                 )
